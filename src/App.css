@@ -1,38 +1,243 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 30px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.scanner-section h3 {
+  margin-top: 0;
+  color: #34495e;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+#reader {
+  width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: white;
+  padding: 20px;
+  border: 2px solid #e1e8ed;
+}
+
+.medicine-info {
+  border: 2px solid #3498db;
+  padding: 25px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
+}
+
+.medicine-info h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.medicine-info p {
+  margin: 15px 0;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.medicine-info b {
+  color: #34495e;
+  font-weight: 600;
+}
+
+.medicine-info h4 {
+  color: #3498db;
+  font-size: 1.3rem;
+  margin: 25px 0 15px 0;
+  font-weight: 500;
+}
+
+.medicine-info input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #bdc3c7;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.medicine-info input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.medicine-info button {
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
   color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
 
-.App-link {
-  color: #61dafb;
+.medicine-info button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.schedule-section h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2rem;
+  margin: 40px 0 30px 0;
+  font-weight: 300;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.schedule-table th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.schedule-table td {
+  padding: 20px;
+  border-bottom: 1px solid #e1e8ed;
+  transition: background-color 0.2s ease;
+}
+
+.schedule-table tr:hover td {
+  background-color: #f8f9fa;
+}
+
+.schedule-table tr:last-child td {
+  border-bottom: none;
+}
+
+.status-taken {
+  color: #27ae60;
+  font-weight: 600;
+  background: #d4edda;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.status-pending {
+  color: #e74c3c;
+  font-weight: 600;
+  background: #f8d7da;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.action-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.action-button:last-child {
+  margin-right: 0;
+}
+
+.action-button.mark-taken {
+  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+  color: white;
+  box-shadow: 0 2px 10px rgba(39, 174, 96, 0.3);
+}
+
+.action-button.mark-taken:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+}
+
+.action-button.delete {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  box-shadow: 0 2px 10px rgba(231, 76, 60, 0.3);
+}
+
+.action-button.delete:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .schedule-table {
+    font-size: 0.9rem;
+  }
+  
+  .schedule-table th,
+  .schedule-table td {
+    padding: 15px;
   }
 }
